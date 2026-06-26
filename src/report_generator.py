@@ -1,8 +1,53 @@
-# Assignment 2: Data Validation & Testing
+from datetime import date
 
-**Course:** MAI201 MLOps  
-**Student:** Soodeh Vanaki  
-**Date:** June 26, 2026
+import pandas as pd
+
+from config import (
+    QUALITY_SUMMARY_CSV_PATH,
+    DATA_DOCS_PATH,
+    GX_SCREENSHOT_PATH,
+    PYTEST_SCREENSHOT_PATH,
+    REPORT_DRAFT_PATH,
+    FINAL_REPORT_PATH,
+    COURSE,
+    ASSIGNMENT, 
+    STUDENT_NAME,
+)
+
+def load_quality_summary():
+    if not QUALITY_SUMMARY_CSV_PATH.exists():
+        raise FileNotFoundError(
+            f"Missing quality summary file: {QUALITY_SUMMARY_CSV_PATH}. "
+            "Run src/run_validation.py first."
+        )
+
+    return pd.read_csv(QUALITY_SUMMARY_CSV_PATH)
+
+
+def build_markdown_table(summary_df):
+    return summary_df.to_markdown(index=False)
+
+
+def get_total_issues(summary_df):
+    return int(summary_df["Count"].sum())
+
+
+def get_highest_issue(summary_df):
+    highest = summary_df.sort_values("Count", ascending=False).iloc[0]
+    return highest["Issue"], int(highest["Count"])
+
+
+def build_report(summary_df):
+    today = date.today().strftime("%B %d, %Y")
+    total_issues = get_total_issues(summary_df)
+    highest_issue, highest_count = get_highest_issue(summary_df)
+    markdown_table = build_markdown_table(summary_df)
+
+    return f"""# {ASSIGNMENT}
+
+**Course:** {COURSE}  
+**Student:** {STUDENT_NAME}  
+**Date:** {today}
 
 ---
 
@@ -26,11 +71,11 @@ The validation results were saved as:
 
 The generated HTML Data Docs are available locally at:
 
-`gx\uncommitted\data_docs\local_site\index.html`
+`{DATA_DOCS_PATH}`
 
 ### Screenshot: Great Expectations Validation Results
 
-![Great Expectations Validation Results](screenshots\gx_validation_results.png)
+![Great Expectations Validation Results]({GX_SCREENSHOT_PATH})
 
 ---
 
@@ -38,21 +83,11 @@ The generated HTML Data Docs are available locally at:
 
 The validation pipeline identified the following data quality issues:
 
-| Issue                 |   Count |
-|:----------------------|--------:|
-| Missing age           |     147 |
-| Missing email         |     438 |
-| Missing salary        |     425 |
-| Duplicate customer_id |     452 |
-| Age outside 0-120     |     384 |
-| Negative salary       |     159 |
-| Invalid email format  |     784 |
-| Invalid country       |     342 |
-| Invalid signup_date   |     256 |
+{markdown_table}
 
-**Total detected data quality issues:** 3387
+**Total detected data quality issues:** {total_issues}
 
-The most frequent issue was **Invalid email format**, with **784** affected rows.
+The most frequent issue was **{highest_issue}**, with **{highest_count}** affected rows.
 
 ---
 
@@ -68,7 +103,7 @@ The pytest execution screenshot is included below.
 
 ### Screenshot: Pytest Results
 
-![Pytest Results](screenshots\pytest_results.png)
+![Pytest Results]({PYTEST_SCREENSHOT_PATH})
 
 ---
 
@@ -83,3 +118,26 @@ Invalid email and phone formats are also important from a data operations perspe
 ## 6. Conclusion
 
 This assignment demonstrated how data validation can be integrated into an MLOps workflow. Great Expectations was used to define and run validation rules, while pytest was used to test reusable data utility functions. The project also includes automated report generation to make the validation process more reproducible and easier to maintain.
+"""
+
+
+def write_report(content, path):
+    path.parent.mkdir(exist_ok=True) if path.parent != path else None
+
+    with open(path, "w", encoding="utf-8") as file:
+        file.write(content)
+
+
+def generate_report():
+    summary_df = load_quality_summary()
+    report_content = build_report(summary_df)
+
+    write_report(report_content, REPORT_DRAFT_PATH)
+    write_report(report_content, FINAL_REPORT_PATH)
+
+    print(f"Draft report generated: {REPORT_DRAFT_PATH}")
+    print(f"Final report generated: {FINAL_REPORT_PATH}")
+
+
+if __name__ == "__main__":
+    generate_report()

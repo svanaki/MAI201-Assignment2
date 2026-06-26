@@ -1,10 +1,10 @@
 {
     "run_id": {
         "run_name": null,
-        "run_time": "2026-06-25T22:28:07.033294-04:00"
+        "run_time": "2026-06-26T00:06:11.628099-04:00"
     },
     "run_results": {
-        "ValidationResultIdentifier::customer_data_expectations/__none__/20260626T022807.033294Z/customer_data_source-customer_data": {
+        "ValidationResultIdentifier::customer_data_expectations/__none__/20260626T040611.628099Z/customer_data_source-customer_data": {
             "validation_result": {
                 "success": false,
                 "results": [
@@ -860,7 +860,7 @@
                     "expectation_suite_name": "customer_data_expectations",
                     "run_id": {
                         "run_name": null,
-                        "run_time": "2026-06-25T22:28:07.033294-04:00"
+                        "run_time": "2026-06-26T00:06:11.628099-04:00"
                     },
                     "batch_spec": {
                         "path": "data\\customer_data.csv",
@@ -868,7 +868,7 @@
                         "reader_options": {}
                     },
                     "batch_markers": {
-                        "ge_load_time": "20260626T022807.038991Z",
+                        "ge_load_time": "20260626T040611.634781Z",
                         "pandas_data_fingerprint": "3f15db136bd43b933746e246b9b670a1"
                     },
                     "active_batch_definition": {
@@ -879,7 +879,7 @@
                             "path": "customer_data.csv"
                         }
                     },
-                    "validation_time": "20260626T022807.062975Z",
+                    "validation_time": "20260626T040611.658866Z",
                     "checkpoint_name": "customer_data_checkpoint",
                     "validation_id": null,
                     "checkpoint_id": null
@@ -893,27 +893,29 @@
                     "class": "StoreEvaluationParametersAction"
                 },
                 "update_data_docs": {
-                    "local_site": "file://C:\\Users\\soode\\OneDrive\\Documents\\Summer 2026\\MAI201 - MLOps\\Assignment 2\\gx\\uncommitted/data_docs/local_site/validations%5Ccustomer_data_expectations%5C__none__%5C20260626T022807.033294Z%5Ccustomer_data_source-customer_data.html",
+                    "local_site": "file://C:\\Users\\soode\\OneDrive\\Documents\\Summer 2026\\MAI201 - MLOps\\Assignment 2\\gx\\uncommitted/data_docs/local_site/validations%5Ccustomer_data_expectations%5C__none__%5C20260626T040611.628099Z%5Ccustomer_data_source-customer_data.html",
                     "class": "UpdateDataDocsAction"
                 }
             }
         }
     },
     "checkpoint_config": {
-        "profilers": [],
+        "ge_cloud_id": null,
         "batch_request": {},
-        "notify_on": null,
-        "default_validation_id": null,
-        "config_version": 1.0,
-        "notify_with": null,
-        "expectation_suite_name": null,
-        "module_name": "great_expectations.checkpoint",
-        "template_name": null,
-        "evaluation_parameters": {},
-        "class_name": "Checkpoint",
+        "profilers": [],
         "runtime_configuration": {},
+        "evaluation_parameters": {},
+        "expectation_suite_ge_cloud_id": null,
+        "run_name_template": null,
+        "site_names": null,
+        "notify_with": null,
+        "config_version": 1.0,
+        "name": "customer_data_checkpoint",
+        "class_name": "Checkpoint",
+        "slack_webhook": null,
         "validations": [
             {
+                "expectation_suite_ge_cloud_id": null,
                 "batch_request": {
                     "datasource_name": "customer_data_source",
                     "data_asset_name": "customer_data",
@@ -922,17 +924,11 @@
                     },
                     "batch_slice": null
                 },
-                "expectation_suite_ge_cloud_id": null,
-                "name": null,
                 "expectation_suite_name": "customer_data_expectations",
-                "id": null
+                "id": null,
+                "name": null
             }
         ],
-        "run_name_template": null,
-        "ge_cloud_id": null,
-        "name": "customer_data_checkpoint",
-        "site_names": null,
-        "slack_webhook": null,
         "action_list": [
             {
                 "name": "store_validation_result",
@@ -953,7 +949,11 @@
                 }
             }
         ],
-        "expectation_suite_ge_cloud_id": null
+        "template_name": null,
+        "module_name": "great_expectations.checkpoint",
+        "default_validation_id": null,
+        "expectation_suite_name": null,
+        "notify_on": null
     },
     "success": false
 }
