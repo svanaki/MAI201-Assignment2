@@ -22,3 +22,12 @@ PYTEST_SCREENSHOT_PATH = Path("screenshots/pytest_results.png")
 COURSE = "MAI201 MLOps"
 ASSIGNMENT = "Assignment 2: Data Validation & Testing"
 STUDENT_NAME = "Soodeh Vanaki"
+
+GX_HTML_OVERVIEW_SCREENSHOT_PATH = Path("screenshots/gx_html_overview.png")
+GX_HTML_AGE_SCREENSHOT_PATH = Path("screenshots/gx_html_age.png")
+GX_HTML_COUNTRY_SCREENSHOT_PATH = Path("screenshots/gx_html_country.png")
+GX_HTML_CUSTOMER_ID_SCREENSHOT_PATH = Path("screenshots/gx_html_customer_id.png")
+GX_HTML_EMAIL_SCREENSHOT_PATH = Path("screenshots/gx_html_email.png")
+GX_HTML_SALARY_SCREENSHOT_PATH = Path("screenshots/gx_html_salary.png")
+GX_HTML_ROW_COUNT_SCREENSHOT_PATH = Path("screenshots/gx_html_row_count.png")
+GX_HTML_SIGNUP_DATE_SCREENSHOT_PATH = Path("screenshots/gx_html_signup_date.png")

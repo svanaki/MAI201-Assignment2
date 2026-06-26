@@ -12,6 +12,8 @@ This report summarizes the data validation and testing work completed for Assign
 
 The validation failed because the messy customer dataset contains multiple data quality issues, including missing values, duplicate customer records, invalid email formats, invalid country values, out-of-range ages, negative salary values, and invalid signup dates.
 
+The project was developed using a Git feature-branch workflow, with each assignment part implemented and merged through separate pull requests.
+
 ---
 
 ## 2. Great Expectations Validation Results
@@ -28,9 +30,41 @@ The generated HTML Data Docs are available locally at:
 
 `gx\uncommitted\data_docs\local_site\index.html`
 
-### Screenshot: Great Expectations Validation Results
+### Screenshot: Command-Line Validation Summary
 
-![Great Expectations Validation Results](screenshots\gx_validation_results.png)
+![Command-Line Validation Summary](screenshots\gx_validation_results.png)
+
+### Screenshot: Great Expectations HTML Data Docs Overview
+
+![Great Expectations HTML Overview](screenshots\gx_html_overview.png)
+
+### Screenshot: Great Expectations Row Count Expectation Results
+
+![Great Expectations Row Count Expectation Results](screenshots\gx_html_row_count.png)
+
+### Screenshot: Great Expectations Age Expectation Results
+
+![Great Expectations Age Expectation Results](screenshots\gx_html_age.png)
+
+### Screenshot: Great Expectations Country Expectation Results
+
+![Great Expectations Country Expectation Results](screenshots\gx_html_country.png)
+
+### Screenshot: Great Expectations Customer ID Expectation Results
+
+![Great Expectations Customer ID Expectation Results](screenshots\gx_html_customer_id.png)
+
+### Screenshot: Great Expectations Email Expectation Results
+
+![Great Expectations Email Expectation Results](screenshots\gx_html_email.png)
+
+### Screenshot: Great Expectations Salary Expectation Results
+
+![Great Expectations Salary Expectation Results](screenshots\gx_html_salary.png)
+
+### Screenshot: Great Expectations Signup Date Expectation Results
+
+![Great Expectations Signup Date Expectation Results](screenshots\gx_html_signup_date.png)
 
 ---
 
@@ -74,12 +108,17 @@ The pytest execution screenshot is included below.
 
 ## 5. Reflection
 
-The data quality issue that would most impact ML model performance is likely the salary-related problem. Salary is an important numerical feature that may strongly influence customer segmentation, prediction, or decision-making models. If salary values are missing, negative, or stored inconsistently as strings with dollar signs, the model may learn incorrect patterns or produce biased results.
+Among all the detected data quality issues, the **salary-related problems** would have the greatest impact on machine learning model performance. Salary is an important numerical feature that is commonly used in predictive models, customer segmentation, and business analytics. Missing values, negative salaries, and inconsistent formatting (such as values stored with dollar signs) can distort the underlying data distribution and lead to inaccurate model training.
 
-Invalid email and phone formats are also important from a data operations perspective, but they may not directly affect model performance unless these fields are used as features. In contrast, salary and age are more likely to be used as predictive inputs, so errors in these columns can have a stronger impact on training quality and model reliability.
+Although duplicate customer IDs and invalid email formats also reduce data quality, they primarily affect data integrity and operational processes. In contrast, poor-quality salary data directly influences feature values that many machine learning algorithms rely on, making it the most significant issue for model accuracy and generalization.
+
+This assignment highlights the importance of validating data before it enters a machine learning pipeline. Detecting and correcting data quality issues early helps improve model reliability, reduces bias, and prevents errors from propagating into downstream analytics and decision-making systems.
+
 
 ---
 
 ## 6. Conclusion
 
-This assignment demonstrated how data validation can be integrated into an MLOps workflow. Great Expectations was used to define and run validation rules, while pytest was used to test reusable data utility functions. The project also includes automated report generation to make the validation process more reproducible and easier to maintain.
+This assignment successfully implemented a complete data validation workflow using Great Expectations and pytest. A Great Expectations project was configured, an expectation suite containing eight validation rules was created, and the dataset was validated against those rules. Automated reports were generated, including JSON results, HTML Data Docs, and a Markdown report summarizing the detected data quality issues.
+
+In addition, pytest was used to verify the correctness of the supporting data utility functions. Together, these components demonstrate how automated validation and testing can improve data quality and reliability within an MLOps pipeline before machine learning models are trained.
