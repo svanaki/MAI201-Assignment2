@@ -28,9 +28,41 @@ The generated HTML Data Docs are available locally at:
 
 `gx\uncommitted\data_docs\local_site\index.html`
 
-### Screenshot: Great Expectations Validation Results
+### Screenshot: Command-Line Validation Summary
 
-![Great Expectations Validation Results](screenshots\gx_validation_results.png)
+![Command-Line Validation Summary](screenshots\gx_validation_results.png)
+
+### Screenshot: Great Expectations HTML Data Docs Overview
+
+![Great Expectations HTML Overview](screenshots\gx_html_overview.png)
+
+### Screenshot: Great Expectations Age Expectation Results
+
+![Great Expectations Age Expectation Results](screenshots\gx_html_age.png)
+
+### Screenshot: Great Expectations Country Expectation Results
+
+![Great Expectations Country Expectation Results](screenshots\gx_html_country.png)
+
+### Screenshot: Great Expectations Customer ID Expectation Results
+
+![Great Expectations Customer ID Expectation Results](screenshots\gx_html_customer_id.png)
+
+### Screenshot: Great Expectations Email Expectation Results
+
+![Great Expectations Email Expectation Results](screenshots\gx_html_email.png)
+
+### Screenshot: Great Expectations Salary Expectation Results
+
+![Great Expectations Salary Expectation Results](screenshots\gx_html_salary.png)
+
+### Screenshot: Great Expectations Row Count Expectation Results
+
+![Great Expectations Row Count Expectation Results](screenshots\gx_html_row_count.png)
+
+### Screenshot: Great Expectations Signup Date Expectation Results
+
+![Great Expectations Signup Date Expectation Results](screenshots\gx_html_signup_date.png)
 
 ---
 
@@ -74,9 +106,11 @@ The pytest execution screenshot is included below.
 
 ## 5. Reflection
 
-The data quality issue that would most impact ML model performance is likely the salary-related problem. Salary is an important numerical feature that may strongly influence customer segmentation, prediction, or decision-making models. If salary values are missing, negative, or stored inconsistently as strings with dollar signs, the model may learn incorrect patterns or produce biased results.
+The data quality issue that would most impact ML model performance is likely the salary-related problem. Salary is an important numerical feature that may strongly influence customer segmentation, prediction, or decision-making models. If salary values are missing, negative, stored inconsistently as strings with dollar signs, or include unrealistic values, the model may learn incorrect patterns and produce unreliable predictions.
 
-Invalid email and phone formats are also important from a data operations perspective, but they may not directly affect model performance unless these fields are used as features. In contrast, salary and age are more likely to be used as predictive inputs, so errors in these columns can have a stronger impact on training quality and model reliability.
+Duplicate customer records are also important because they can overrepresent some customers and bias model training. Invalid email formats and phone number inconsistencies are especially important for data operations and customer communication, although they may have less direct model impact unless those fields are used for feature engineering.
+
+Overall, validation is important because poor-quality data can create misleading patterns before the model training stage begins.
 
 ---
 

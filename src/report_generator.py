@@ -8,11 +8,19 @@ from config import (
     GX_SCREENSHOT_PATH,
     PYTEST_SCREENSHOT_PATH,
     REPORT_DRAFT_PATH,
-    FINAL_REPORT_PATH,
     COURSE,
-    ASSIGNMENT, 
+    ASSIGNMENT,
     STUDENT_NAME,
+    GX_HTML_OVERVIEW_SCREENSHOT_PATH,
+    GX_HTML_AGE_SCREENSHOT_PATH,
+    GX_HTML_COUNTRY_SCREENSHOT_PATH,
+    GX_HTML_CUSTOMER_ID_SCREENSHOT_PATH,
+    GX_HTML_EMAIL_SCREENSHOT_PATH,
+    GX_HTML_SALARY_SCREENSHOT_PATH,
+    GX_HTML_ROW_COUNT_SCREENSHOT_PATH,
+    GX_HTML_SIGNUP_DATE_SCREENSHOT_PATH,
 )
+
 
 def load_quality_summary():
     if not QUALITY_SUMMARY_CSV_PATH.exists():
@@ -20,7 +28,6 @@ def load_quality_summary():
             f"Missing quality summary file: {QUALITY_SUMMARY_CSV_PATH}. "
             "Run src/run_validation.py first."
         )
-
     return pd.read_csv(QUALITY_SUMMARY_CSV_PATH)
 
 
@@ -73,9 +80,41 @@ The generated HTML Data Docs are available locally at:
 
 `{DATA_DOCS_PATH}`
 
-### Screenshot: Great Expectations Validation Results
+### Screenshot: Command-Line Validation Summary
 
-![Great Expectations Validation Results]({GX_SCREENSHOT_PATH})
+![Command-Line Validation Summary]({GX_SCREENSHOT_PATH})
+
+### Screenshot: Great Expectations HTML Data Docs Overview
+
+![Great Expectations HTML Overview]({GX_HTML_OVERVIEW_SCREENSHOT_PATH})
+
+### Screenshot: Great Expectations Age Expectation Results
+
+![Great Expectations Age Expectation Results]({GX_HTML_AGE_SCREENSHOT_PATH})
+
+### Screenshot: Great Expectations Country Expectation Results
+
+![Great Expectations Country Expectation Results]({GX_HTML_COUNTRY_SCREENSHOT_PATH})
+
+### Screenshot: Great Expectations Customer ID Expectation Results
+
+![Great Expectations Customer ID Expectation Results]({GX_HTML_CUSTOMER_ID_SCREENSHOT_PATH})
+
+### Screenshot: Great Expectations Email Expectation Results
+
+![Great Expectations Email Expectation Results]({GX_HTML_EMAIL_SCREENSHOT_PATH})
+
+### Screenshot: Great Expectations Salary Expectation Results
+
+![Great Expectations Salary Expectation Results]({GX_HTML_SALARY_SCREENSHOT_PATH})
+
+### Screenshot: Great Expectations Row Count Expectation Results
+
+![Great Expectations Row Count Expectation Results]({GX_HTML_ROW_COUNT_SCREENSHOT_PATH})
+
+### Screenshot: Great Expectations Signup Date Expectation Results
+
+![Great Expectations Signup Date Expectation Results]({GX_HTML_SIGNUP_DATE_SCREENSHOT_PATH})
 
 ---
 
@@ -109,9 +148,11 @@ The pytest execution screenshot is included below.
 
 ## 5. Reflection
 
-The data quality issue that would most impact ML model performance is likely the salary-related problem. Salary is an important numerical feature that may strongly influence customer segmentation, prediction, or decision-making models. If salary values are missing, negative, or stored inconsistently as strings with dollar signs, the model may learn incorrect patterns or produce biased results.
+The data quality issue that would most impact ML model performance is likely the salary-related problem. Salary is an important numerical feature that may strongly influence customer segmentation, prediction, or decision-making models. If salary values are missing, negative, stored inconsistently as strings with dollar signs, or include unrealistic values, the model may learn incorrect patterns and produce unreliable predictions.
 
-Invalid email and phone formats are also important from a data operations perspective, but they may not directly affect model performance unless these fields are used as features. In contrast, salary and age are more likely to be used as predictive inputs, so errors in these columns can have a stronger impact on training quality and model reliability.
+Duplicate customer records are also important because they can overrepresent some customers and bias model training. Invalid email formats and phone number inconsistencies are especially important for data operations and customer communication, although they may have less direct model impact unless those fields are used for feature engineering.
+
+Overall, validation is important because poor-quality data can create misleading patterns before the model training stage begins.
 
 ---
 
@@ -122,7 +163,7 @@ This assignment demonstrated how data validation can be integrated into an MLOps
 
 
 def write_report(content, path):
-    path.parent.mkdir(exist_ok=True) if path.parent != path else None
+    path.parent.mkdir(exist_ok=True)
 
     with open(path, "w", encoding="utf-8") as file:
         file.write(content)
@@ -133,10 +174,9 @@ def generate_report():
     report_content = build_report(summary_df)
 
     write_report(report_content, REPORT_DRAFT_PATH)
-    write_report(report_content, FINAL_REPORT_PATH)
 
     print(f"Draft report generated: {REPORT_DRAFT_PATH}")
-    print(f"Final report generated: {FINAL_REPORT_PATH}")
+    print("Final report was not overwritten. Copy the draft content into assignment2_report.md when ready and modify as needed.")
 
 
 if __name__ == "__main__":
