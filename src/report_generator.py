@@ -82,39 +82,39 @@ The generated HTML Data Docs are available locally at:
 
 ### Screenshot: Command-Line Validation Summary
 
-![Command-Line Validation Summary]({GX_SCREENSHOT_PATH})
+![Command-Line Validation Summary]({GX_SCREENSHOT_PATH.as_posix()})
 
 ### Screenshot: Great Expectations HTML Data Docs Overview
 
-![Great Expectations HTML Overview]({GX_HTML_OVERVIEW_SCREENSHOT_PATH})
+![Great Expectations HTML Overview]({GX_HTML_OVERVIEW_SCREENSHOT_PATH.as_posix()})
 
 ### Screenshot: Great Expectations Age Expectation Results
 
-![Great Expectations Age Expectation Results]({GX_HTML_AGE_SCREENSHOT_PATH})
+![Great Expectations Age Expectation Results]({GX_HTML_AGE_SCREENSHOT_PATH.as_posix()})
 
 ### Screenshot: Great Expectations Country Expectation Results
 
-![Great Expectations Country Expectation Results]({GX_HTML_COUNTRY_SCREENSHOT_PATH})
+![Great Expectations Country Expectation Results]({GX_HTML_COUNTRY_SCREENSHOT_PATH.as_posix()})
 
 ### Screenshot: Great Expectations Customer ID Expectation Results
 
-![Great Expectations Customer ID Expectation Results]({GX_HTML_CUSTOMER_ID_SCREENSHOT_PATH})
+![Great Expectations Customer ID Expectation Results]({GX_HTML_CUSTOMER_ID_SCREENSHOT_PATH.as_posix()})
 
 ### Screenshot: Great Expectations Email Expectation Results
 
-![Great Expectations Email Expectation Results]({GX_HTML_EMAIL_SCREENSHOT_PATH})
+![Great Expectations Email Expectation Results]({GX_HTML_EMAIL_SCREENSHOT_PATH.as_posix()})
 
 ### Screenshot: Great Expectations Salary Expectation Results
 
-![Great Expectations Salary Expectation Results]({GX_HTML_SALARY_SCREENSHOT_PATH})
+![Great Expectations Salary Expectation Results]({GX_HTML_SALARY_SCREENSHOT_PATH.as_posix()})
 
 ### Screenshot: Great Expectations Row Count Expectation Results
 
-![Great Expectations Row Count Expectation Results]({GX_HTML_ROW_COUNT_SCREENSHOT_PATH})
+![Great Expectations Row Count Expectation Results]({GX_HTML_ROW_COUNT_SCREENSHOT_PATH.as_posix()})
 
 ### Screenshot: Great Expectations Signup Date Expectation Results
 
-![Great Expectations Signup Date Expectation Results]({GX_HTML_SIGNUP_DATE_SCREENSHOT_PATH})
+![Great Expectations Signup Date Expectation Results]({GX_HTML_SIGNUP_DATE_SCREENSHOT_PATH.as_posix()})
 
 ---
 
@@ -142,7 +142,7 @@ The pytest execution screenshot is included below.
 
 ### Screenshot: Pytest Results
 
-![Pytest Results]({PYTEST_SCREENSHOT_PATH})
+![Pytest Results]({PYTEST_SCREENSHOT_PATH.as_posix()})
 
 ---
 

@@ -32,39 +32,39 @@ The generated HTML Data Docs are available locally at:
 
 ### Screenshot: Command-Line Validation Summary
 
-![Command-Line Validation Summary](screenshots\gx_validation_results.png)
+![Command-Line Validation Summary](screenshots/gx_validation_results.png)
 
 ### Screenshot: Great Expectations HTML Data Docs Overview
 
-![Great Expectations HTML Overview](screenshots\gx_html_overview.png)
+![Great Expectations HTML Overview](screenshots/gx_html_overview.png)
 
 ### Screenshot: Great Expectations Row Count Expectation Results
 
-![Great Expectations Row Count Expectation Results](screenshots\gx_html_row_count.png)
+![Great Expectations Row Count Expectation Results](screenshots/gx_html_row_count.png)
 
 ### Screenshot: Great Expectations Age Expectation Results
 
-![Great Expectations Age Expectation Results](screenshots\gx_html_age.png)
+![Great Expectations Age Expectation Results](screenshots/gx_html_age.png)
 
 ### Screenshot: Great Expectations Country Expectation Results
 
-![Great Expectations Country Expectation Results](screenshots\gx_html_country.png)
+![Great Expectations Country Expectation Results](screenshots/gx_html_country.png)
 
 ### Screenshot: Great Expectations Customer ID Expectation Results
 
-![Great Expectations Customer ID Expectation Results](screenshots\gx_html_customer_id.png)
+![Great Expectations Customer ID Expectation Results](screenshots/gx_html_customer_id.png)
 
 ### Screenshot: Great Expectations Email Expectation Results
 
-![Great Expectations Email Expectation Results](screenshots\gx_html_email.png)
+![Great Expectations Email Expectation Results](screenshots/gx_html_email.png)
 
 ### Screenshot: Great Expectations Salary Expectation Results
 
-![Great Expectations Salary Expectation Results](screenshots\gx_html_salary.png)
+![Great Expectations Salary Expectation Results](screenshots/gx_html_salary.png)
 
 ### Screenshot: Great Expectations Signup Date Expectation Results
 
-![Great Expectations Signup Date Expectation Results](screenshots\gx_html_signup_date.png)
+![Great Expectations Signup Date Expectation Results](screenshots/gx_html_signup_date.png)
 
 ---
 
@@ -102,7 +102,7 @@ The pytest execution screenshot is included below.
 
 ### Screenshot: Pytest Results
 
-![Pytest Results](screenshots\pytest_results.png)
+![Pytest Results](screenshots/pytest_results.png)
 
 ---
 
