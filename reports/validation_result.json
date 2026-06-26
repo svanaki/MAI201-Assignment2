@@ -1,0 +1,959 @@
+{
+    "run_id": {
+        "run_name": null,
+        "run_time": "2026-06-25T22:28:07.033294-04:00"
+    },
+    "run_results": {
+        "ValidationResultIdentifier::customer_data_expectations/__none__/20260626T022807.033294Z/customer_data_source-customer_data": {
+            "validation_result": {
+                "success": false,
+                "results": [
+                    {
+                        "success": false,
+                        "expectation_config": {
+                            "expectation_type": "expect_column_values_to_not_be_null",
+                            "kwargs": {
+                                "column": "customer_id",
+                                "batch_id": "customer_data_source-customer_data"
+                            },
+                            "meta": {}
+                        },
+                        "result": {
+                            "element_count": 5015,
+                            "unexpected_count": 150,
+                            "unexpected_percent": 2.991026919242273,
+                            "partial_unexpected_list": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ],
+                            "partial_unexpected_counts": [
+                                {
+                                    "value": null,
+                                    "count": 20
+                                }
+                            ],
+                            "partial_unexpected_index_list": [
+                                20,
+                                57,
+                                107,
+                                123,
+                                145,
+                                152,
+                                232,
+                                244,
+                                272,
+                                296,
+                                342,
+                                351,
+                                399,
+                                455,
+                                468,
+                                493,
+                                528,
+                                529,
+                                540,
+                                541
+                            ]
+                        },
+                        "meta": {},
+                        "exception_info": {
+                            "raised_exception": false,
+                            "exception_traceback": null,
+                            "exception_message": null
+                        }
+                    },
+                    {
+                        "success": false,
+                        "expectation_config": {
+                            "expectation_type": "expect_column_values_to_be_unique",
+                            "kwargs": {
+                                "column": "customer_id",
+                                "batch_id": "customer_data_source-customer_data"
+                            },
+                            "meta": {}
+                        },
+                        "result": {
+                            "element_count": 5015,
+                            "unexpected_count": 568,
+                            "unexpected_percent": 11.675231243576567,
+                            "partial_unexpected_list": [
+                                "C00923",
+                                "C01991",
+                                "C00380",
+                                "C00801",
+                                "C00113",
+                                "C00019",
+                                "C02854",
+                                "C00822",
+                                "C00834",
+                                "C00512",
+                                "C00804",
+                                "C00107",
+                                "C00100",
+                                "C00200",
+                                "C00157",
+                                "C00191",
+                                "C00350",
+                                "C00009",
+                                "C00562",
+                                "C01060"
+                            ],
+                            "missing_count": 150,
+                            "missing_percent": 2.991026919242273,
+                            "unexpected_percent_total": 11.326021934197408,
+                            "unexpected_percent_nonmissing": 11.675231243576567,
+                            "partial_unexpected_counts": [
+                                {
+                                    "value": "C00009",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00019",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00100",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00107",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00113",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00157",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00191",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00200",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00350",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00380",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00512",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00562",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00801",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00804",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00822",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00834",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C00923",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C01060",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C01991",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "C02854",
+                                    "count": 1
+                                }
+                            ],
+                            "partial_unexpected_index_list": [
+                                5,
+                                6,
+                                7,
+                                12,
+                                13,
+                                25,
+                                30,
+                                40,
+                                49,
+                                60,
+                                81,
+                                91,
+                                93,
+                                95,
+                                114,
+                                130,
+                                139,
+                                165,
+                                171,
+                                178
+                            ]
+                        },
+                        "meta": {},
+                        "exception_info": {
+                            "raised_exception": false,
+                            "exception_traceback": null,
+                            "exception_message": null
+                        }
+                    },
+                    {
+                        "success": false,
+                        "expectation_config": {
+                            "expectation_type": "expect_column_values_to_be_between",
+                            "kwargs": {
+                                "column": "age",
+                                "max_value": 120,
+                                "min_value": 0,
+                                "batch_id": "customer_data_source-customer_data"
+                            },
+                            "meta": {}
+                        },
+                        "result": {
+                            "element_count": 5015,
+                            "unexpected_count": 384,
+                            "unexpected_percent": 7.8882497945768275,
+                            "partial_unexpected_list": [
+                                999.0,
+                                -25.0,
+                                500.0,
+                                -5.0,
+                                300.0,
+                                -25.0,
+                                999.0,
+                                200.0,
+                                200.0,
+                                -50.0,
+                                300.0,
+                                -50.0,
+                                200.0,
+                                -10.0,
+                                -25.0,
+                                999.0,
+                                180.0,
+                                999.0,
+                                150.0,
+                                -999.0
+                            ],
+                            "missing_count": 147,
+                            "missing_percent": 2.931206380857428,
+                            "unexpected_percent_total": 7.657028913260219,
+                            "unexpected_percent_nonmissing": 7.8882497945768275,
+                            "partial_unexpected_counts": [
+                                {
+                                    "value": 999.0,
+                                    "count": 4
+                                },
+                                {
+                                    "value": -25.0,
+                                    "count": 3
+                                },
+                                {
+                                    "value": 200.0,
+                                    "count": 3
+                                },
+                                {
+                                    "value": -50.0,
+                                    "count": 2
+                                },
+                                {
+                                    "value": 300.0,
+                                    "count": 2
+                                },
+                                {
+                                    "value": -999.0,
+                                    "count": 1
+                                },
+                                {
+                                    "value": -10.0,
+                                    "count": 1
+                                },
+                                {
+                                    "value": -5.0,
+                                    "count": 1
+                                },
+                                {
+                                    "value": 150.0,
+                                    "count": 1
+                                },
+                                {
+                                    "value": 180.0,
+                                    "count": 1
+                                },
+                                {
+                                    "value": 500.0,
+                                    "count": 1
+                                }
+                            ],
+                            "partial_unexpected_index_list": [
+                                0,
+                                8,
+                                17,
+                                23,
+                                33,
+                                36,
+                                41,
+                                52,
+                                55,
+                                78,
+                                102,
+                                106,
+                                116,
+                                120,
+                                122,
+                                131,
+                                136,
+                                146,
+                                180,
+                                196
+                            ]
+                        },
+                        "meta": {},
+                        "exception_info": {
+                            "raised_exception": false,
+                            "exception_traceback": null,
+                            "exception_message": null
+                        }
+                    },
+                    {
+                        "success": false,
+                        "expectation_config": {
+                            "expectation_type": "expect_column_values_to_match_regex",
+                            "kwargs": {
+                                "column": "email",
+                                "regex": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
+                                "batch_id": "customer_data_source-customer_data"
+                            },
+                            "meta": {}
+                        },
+                        "result": {
+                            "element_count": 5015,
+                            "unexpected_count": 346,
+                            "unexpected_percent": 7.559536814507319,
+                            "partial_unexpected_list": [
+                                "@domain.com",
+                                "invalid-email",
+                                "user@@domain.com",
+                                "no-dot@com",
+                                "user@",
+                                "user@@domain.com",
+                                "no-dot@com",
+                                "missingatsign.com",
+                                "missingatsign.com",
+                                "missingatsign.com",
+                                "user@@domain.com",
+                                "missingatsign.com",
+                                "user@.com",
+                                "user name@domain.com",
+                                "multiple@issues@invalid",
+                                "user@",
+                                "user@",
+                                "user@domain.",
+                                "@domain.com",
+                                "invalid-email"
+                            ],
+                            "missing_count": 438,
+                            "missing_percent": 8.733798604187438,
+                            "unexpected_percent_total": 6.899302093718844,
+                            "unexpected_percent_nonmissing": 7.559536814507319,
+                            "partial_unexpected_counts": [
+                                {
+                                    "value": "missingatsign.com",
+                                    "count": 4
+                                },
+                                {
+                                    "value": "user@",
+                                    "count": 3
+                                },
+                                {
+                                    "value": "user@@domain.com",
+                                    "count": 3
+                                },
+                                {
+                                    "value": "@domain.com",
+                                    "count": 2
+                                },
+                                {
+                                    "value": "invalid-email",
+                                    "count": 2
+                                },
+                                {
+                                    "value": "no-dot@com",
+                                    "count": 2
+                                },
+                                {
+                                    "value": "multiple@issues@invalid",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "user name@domain.com",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "user@.com",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "user@domain.",
+                                    "count": 1
+                                }
+                            ],
+                            "partial_unexpected_index_list": [
+                                3,
+                                18,
+                                37,
+                                57,
+                                107,
+                                111,
+                                122,
+                                141,
+                                157,
+                                165,
+                                175,
+                                176,
+                                177,
+                                191,
+                                196,
+                                197,
+                                198,
+                                222,
+                                235,
+                                242
+                            ]
+                        },
+                        "meta": {},
+                        "exception_info": {
+                            "raised_exception": false,
+                            "exception_traceback": null,
+                            "exception_message": null
+                        }
+                    },
+                    {
+                        "success": false,
+                        "expectation_config": {
+                            "expectation_type": "expect_column_values_to_not_be_null",
+                            "kwargs": {
+                                "column": "salary",
+                                "mostly": 0.95,
+                                "batch_id": "customer_data_source-customer_data"
+                            },
+                            "meta": {}
+                        },
+                        "result": {
+                            "element_count": 5015,
+                            "unexpected_count": 425,
+                            "unexpected_percent": 8.47457627118644,
+                            "partial_unexpected_list": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ],
+                            "partial_unexpected_counts": [
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                },
+                                {
+                                    "value": null,
+                                    "count": 1
+                                }
+                            ],
+                            "partial_unexpected_index_list": [
+                                7,
+                                15,
+                                16,
+                                42,
+                                56,
+                                63,
+                                72,
+                                81,
+                                83,
+                                87,
+                                94,
+                                97,
+                                98,
+                                103,
+                                109,
+                                148,
+                                156,
+                                157,
+                                161,
+                                172
+                            ]
+                        },
+                        "meta": {},
+                        "exception_info": {
+                            "raised_exception": false,
+                            "exception_traceback": null,
+                            "exception_message": null
+                        }
+                    },
+                    {
+                        "success": false,
+                        "expectation_config": {
+                            "expectation_type": "expect_column_values_to_be_in_set",
+                            "kwargs": {
+                                "column": "country",
+                                "value_set": [
+                                    "USA",
+                                    "Canada",
+                                    "UK",
+                                    "Australia"
+                                ],
+                                "batch_id": "customer_data_source-customer_data"
+                            },
+                            "meta": {}
+                        },
+                        "result": {
+                            "element_count": 5015,
+                            "unexpected_count": 301,
+                            "unexpected_percent": 6.051467631684761,
+                            "partial_unexpected_list": [
+                                "India",
+                                "Spain",
+                                "Brazil",
+                                "Brazil",
+                                "Brazil",
+                                "Mexico",
+                                "Spain",
+                                "Mexico",
+                                "Germany",
+                                "Mexico",
+                                "Brazil",
+                                "Spain",
+                                "Germany",
+                                "China",
+                                "InvalidCountry",
+                                "Germany",
+                                "Mexico",
+                                "India",
+                                "Germany",
+                                "Mexico"
+                            ],
+                            "missing_count": 41,
+                            "missing_percent": 0.8175473579262214,
+                            "unexpected_percent_total": 6.001994017946162,
+                            "unexpected_percent_nonmissing": 6.051467631684761,
+                            "partial_unexpected_counts": [
+                                {
+                                    "value": "Mexico",
+                                    "count": 5
+                                },
+                                {
+                                    "value": "Brazil",
+                                    "count": 4
+                                },
+                                {
+                                    "value": "Germany",
+                                    "count": 4
+                                },
+                                {
+                                    "value": "Spain",
+                                    "count": 3
+                                },
+                                {
+                                    "value": "India",
+                                    "count": 2
+                                },
+                                {
+                                    "value": "China",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "InvalidCountry",
+                                    "count": 1
+                                }
+                            ],
+                            "partial_unexpected_index_list": [
+                                3,
+                                14,
+                                28,
+                                41,
+                                96,
+                                105,
+                                110,
+                                115,
+                                130,
+                                164,
+                                167,
+                                177,
+                                192,
+                                194,
+                                196,
+                                199,
+                                208,
+                                225,
+                                227,
+                                244
+                            ]
+                        },
+                        "meta": {},
+                        "exception_info": {
+                            "raised_exception": false,
+                            "exception_traceback": null,
+                            "exception_message": null
+                        }
+                    },
+                    {
+                        "success": false,
+                        "expectation_config": {
+                            "expectation_type": "expect_column_values_to_be_dateutil_parseable",
+                            "kwargs": {
+                                "column": "signup_date",
+                                "batch_id": "customer_data_source-customer_data"
+                            },
+                            "meta": {}
+                        },
+                        "result": {
+                            "element_count": 5015,
+                            "unexpected_count": 231,
+                            "unexpected_percent": 4.619076184763047,
+                            "partial_unexpected_list": [
+                                "2023-02-30",
+                                "2023-02-29",
+                                "2023-04-31",
+                                "2023-02-30",
+                                "2023-04-31",
+                                "2023-02-30",
+                                "2023-06-31",
+                                "2023-04-31",
+                                "2023-13-01",
+                                "2023-09-31",
+                                "not-a-date",
+                                "2023-02-30",
+                                "invalid-date",
+                                "2023-06-31",
+                                "invalid-date",
+                                "2023-06-31",
+                                "2023-06-31",
+                                "2023-11-31",
+                                "2023-02-30",
+                                "2023-09-31"
+                            ],
+                            "missing_count": 14,
+                            "missing_percent": 0.2791625124626122,
+                            "unexpected_percent_total": 4.6061814556331,
+                            "unexpected_percent_nonmissing": 4.619076184763047,
+                            "partial_unexpected_counts": [
+                                {
+                                    "value": "2023-02-30",
+                                    "count": 5
+                                },
+                                {
+                                    "value": "2023-06-31",
+                                    "count": 4
+                                },
+                                {
+                                    "value": "2023-04-31",
+                                    "count": 3
+                                },
+                                {
+                                    "value": "2023-09-31",
+                                    "count": 2
+                                },
+                                {
+                                    "value": "invalid-date",
+                                    "count": 2
+                                },
+                                {
+                                    "value": "2023-02-29",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "2023-11-31",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "2023-13-01",
+                                    "count": 1
+                                },
+                                {
+                                    "value": "not-a-date",
+                                    "count": 1
+                                }
+                            ],
+                            "partial_unexpected_index_list": [
+                                25,
+                                27,
+                                60,
+                                66,
+                                78,
+                                86,
+                                107,
+                                133,
+                                134,
+                                153,
+                                178,
+                                179,
+                                181,
+                                187,
+                                196,
+                                219,
+                                245,
+                                274,
+                                280,
+                                319
+                            ]
+                        },
+                        "meta": {},
+                        "exception_info": {
+                            "raised_exception": false,
+                            "exception_traceback": null,
+                            "exception_message": null
+                        }
+                    },
+                    {
+                        "success": false,
+                        "expectation_config": {
+                            "expectation_type": "expect_table_row_count_to_be_between",
+                            "kwargs": {
+                                "max_value": 1000,
+                                "min_value": 500,
+                                "batch_id": "customer_data_source-customer_data"
+                            },
+                            "meta": {}
+                        },
+                        "result": {
+                            "observed_value": 5015
+                        },
+                        "meta": {},
+                        "exception_info": {
+                            "raised_exception": false,
+                            "exception_traceback": null,
+                            "exception_message": null
+                        }
+                    }
+                ],
+                "evaluation_parameters": {},
+                "statistics": {
+                    "evaluated_expectations": 8,
+                    "successful_expectations": 0,
+                    "unsuccessful_expectations": 8,
+                    "success_percent": 0.0
+                },
+                "meta": {
+                    "great_expectations_version": "0.18.21",
+                    "expectation_suite_name": "customer_data_expectations",
+                    "run_id": {
+                        "run_name": null,
+                        "run_time": "2026-06-25T22:28:07.033294-04:00"
+                    },
+                    "batch_spec": {
+                        "path": "data\\customer_data.csv",
+                        "reader_method": "read_csv",
+                        "reader_options": {}
+                    },
+                    "batch_markers": {
+                        "ge_load_time": "20260626T022807.038991Z",
+                        "pandas_data_fingerprint": "3f15db136bd43b933746e246b9b670a1"
+                    },
+                    "active_batch_definition": {
+                        "datasource_name": "customer_data_source",
+                        "data_connector_name": "fluent",
+                        "data_asset_name": "customer_data",
+                        "batch_identifiers": {
+                            "path": "customer_data.csv"
+                        }
+                    },
+                    "validation_time": "20260626T022807.062975Z",
+                    "checkpoint_name": "customer_data_checkpoint",
+                    "validation_id": null,
+                    "checkpoint_id": null
+                }
+            },
+            "actions_results": {
+                "store_validation_result": {
+                    "class": "StoreValidationResultAction"
+                },
+                "store_evaluation_params": {
+                    "class": "StoreEvaluationParametersAction"
+                },
+                "update_data_docs": {
+                    "local_site": "file://C:\\Users\\soode\\OneDrive\\Documents\\Summer 2026\\MAI201 - MLOps\\Assignment 2\\gx\\uncommitted/data_docs/local_site/validations%5Ccustomer_data_expectations%5C__none__%5C20260626T022807.033294Z%5Ccustomer_data_source-customer_data.html",
+                    "class": "UpdateDataDocsAction"
+                }
+            }
+        }
+    },
+    "checkpoint_config": {
+        "profilers": [],
+        "batch_request": {},
+        "notify_on": null,
+        "default_validation_id": null,
+        "config_version": 1.0,
+        "notify_with": null,
+        "expectation_suite_name": null,
+        "module_name": "great_expectations.checkpoint",
+        "template_name": null,
+        "evaluation_parameters": {},
+        "class_name": "Checkpoint",
+        "runtime_configuration": {},
+        "validations": [
+            {
+                "batch_request": {
+                    "datasource_name": "customer_data_source",
+                    "data_asset_name": "customer_data",
+                    "options": {
+                        "path": "customer_data.csv"
+                    },
+                    "batch_slice": null
+                },
+                "expectation_suite_ge_cloud_id": null,
+                "name": null,
+                "expectation_suite_name": "customer_data_expectations",
+                "id": null
+            }
+        ],
+        "run_name_template": null,
+        "ge_cloud_id": null,
+        "name": "customer_data_checkpoint",
+        "site_names": null,
+        "slack_webhook": null,
+        "action_list": [
+            {
+                "name": "store_validation_result",
+                "action": {
+                    "class_name": "StoreValidationResultAction"
+                }
+            },
+            {
+                "name": "store_evaluation_params",
+                "action": {
+                    "class_name": "StoreEvaluationParametersAction"
+                }
+            },
+            {
+                "name": "update_data_docs",
+                "action": {
+                    "class_name": "UpdateDataDocsAction"
+                }
+            }
+        ],
+        "expectation_suite_ge_cloud_id": null
+    },
+    "success": false
+}

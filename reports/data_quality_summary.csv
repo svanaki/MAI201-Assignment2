@@ -1,0 +1,10 @@
+Issue,Count
+Missing age,147
+Missing email,438
+Missing salary,425
+Duplicate customer_id,452
+Age outside 0-120,384
+Negative salary,159
+Invalid email format,784
+Invalid country,342
+Invalid signup_date,256
