@@ -1,20 +1,18 @@
 import json
-from pathlib import Path
-
 import pandas as pd
 import great_expectations as gx
 
-
-CONTEXT_ROOT_DIR = "gx"
-DATASOURCE_NAME = "customer_data_source"
-DATA_ASSET_NAME = "customer_data"
-SUITE_NAME = "customer_data_expectations"
-
-DATA_PATH = Path("data/customer_data.csv")
-REPORTS_DIR = Path("reports")
-VALIDATION_RESULT_PATH = REPORTS_DIR / "validation_result.json"
-QUALITY_SUMMARY_PATH = REPORTS_DIR / "data_quality_summary.csv"
-
+from config import (
+    CONTEXT_ROOT_DIR,
+    DATASOURCE_NAME,
+    DATA_ASSET_NAME,
+    SUITE_NAME,
+    DATA_PATH,
+    REPORTS_DIR,
+    VALIDATION_JSON_PATH,
+    QUALITY_SUMMARY_CSV_PATH,
+    DATA_DOCS_PATH,
+)
 
 def clean_salary(value):
     if pd.isna(value):
@@ -79,7 +77,7 @@ def run_great_expectations():
 def save_json_report(validation_result):
     REPORTS_DIR.mkdir(exist_ok=True)
 
-    with open(VALIDATION_RESULT_PATH, "w", encoding="utf-8") as file:
+    with open(VALIDATION_JSON_PATH, "w", encoding="utf-8") as file:
         json.dump(validation_result.to_json_dict(), file, indent=4)
 
 
@@ -90,7 +88,7 @@ def save_quality_summary_csv(issues):
         [{"Issue": issue, "Count": count} for issue, count in issues.items()]
     )
 
-    summary_df.to_csv(QUALITY_SUMMARY_PATH, index=False)
+    summary_df.to_csv(QUALITY_SUMMARY_CSV_PATH, index=False)
 
 
 def print_summary(df, issues, validation_result):
@@ -108,9 +106,9 @@ def print_summary(df, issues, validation_result):
 
     print("\nGenerated Reports")
     print("-" * 60)
-    print(f"JSON report           : {VALIDATION_RESULT_PATH}")
-    print(f"CSV summary           : {QUALITY_SUMMARY_PATH}")
-    print("HTML Data Docs        : gx/uncommitted/data_docs/local_site/index.html")
+    print(f"JSON report           : {VALIDATION_JSON_PATH}")
+    print(f"CSV summary           : {QUALITY_SUMMARY_CSV_PATH}")
+    print(f"HTML Data Docs        : {DATA_DOCS_PATH}")
     print("=" * 60)
 
 
